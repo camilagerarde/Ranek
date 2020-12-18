@@ -11,7 +11,7 @@
       </form>
       <p class="esqueceu">
         Esqueceu a senha?
-        <a href="">Clique aqui.</a>
+        <a @click="mostrarErro('Em construção :(')">Clique aqui.</a>
       </p>
       <p class="erro">{{ mensagemErro }}</p>
     </div>

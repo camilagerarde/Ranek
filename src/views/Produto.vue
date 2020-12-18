@@ -76,6 +76,10 @@ export default {
   width: 200px;
 }
 
+.fotos {
+  max-width: 70%;
+}
+
 @media screen and (max-width: 500px) {
   .produtos {
     gap: 10px;

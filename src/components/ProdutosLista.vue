@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       produtos: null,
-      produtosPorPagina: 9,
+      produtosPorPagina: 6,
       produtosTotal: 0
     };
   },
@@ -120,6 +120,8 @@ export default {
 }
 
 .sem-resultado {
+  color: #e80;
+  font-size: 1.2rem;
   text-align: center;
 }
 
