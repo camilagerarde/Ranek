@@ -1,0 +1,164 @@
+{
+  "usuario": [
+    {
+      "id": "fulano@email.com",
+      "email": "fulano@email.com",
+      "nome": "Fulano Silva",
+      "senha": "123456",
+      "rua": "Rua Logo Ali",
+      "cep": "12345678",
+      "numero": "25",
+      "bairro": "Socorro",
+      "cidade": "São Paulo",
+      "estado": "SP"
+    },
+    {
+      "id": "beltrano@email.com",
+      "email": "beltrano@email.com",
+      "nome": "Beltrano Souza",
+      "senha": "654321",
+      "rua": "Rua aquela",
+      "cep": "87654321",
+      "numero": "08",
+      "bairro": "Saúde",
+      "cidade": "São Paulo",
+      "estado": "SP"
+    },
+    {
+      "id": "ciclano@mail.com",
+      "email": "ciclano@mail.com",
+      "nome": "Ciclano A. Santos",
+      "senha": "123123",
+      "rua": "Avenida Paulista",
+      "cep": "01310-100",
+      "numero": "50",
+      "bairro": "Bela Vista",
+      "cidade": "São Paulo",
+      "estado": "SP"
+    }
+  ],
+  "produtos": [
+    {
+      "nome": "Notebook",
+      "preco": "2999",
+      "descricao": "Notebook seminovo em excelente estado!",
+      "fotos": "https://raw.githubusercontent.com/camilagerarde/Ranek/main/src/assets/notebook.jpg",
+      "vendido": "false",
+      "usuario_id": "fulano@email.com",
+      "id": 1
+    },
+    {
+      "nome": "Câmera",
+      "preco": "899",
+      "descricao": "Câmera semiprofissional, pouco usada, ótimo estado!",
+      "fotos": "https://raw.githubusercontent.com/camilagerarde/Ranek/main/src/assets/camera.jpg",
+      "vendido": "false",
+      "usuario_id": "fulano@email.com",
+      "id": 2
+    },
+    {
+      "nome": "Smartphone",
+      "preco": "1199",
+      "descricao": "Smartphone excelente! Seminovo.",
+      "fotos": "https://raw.githubusercontent.com/camilagerarde/Ranek/main/src/assets/smartphone.jpg",
+      "vendido": "false",
+      "usuario_id": "beltrano@email.com",
+      "id": 3
+    },
+    {
+      "nome": "Smartwatch",
+      "preco": "899",
+      "descricao": "Smartwatch com funções incríveis!!",
+      "fotos": "https://raw.githubusercontent.com/camilagerarde/Ranek/main/src/assets/smartwatch.jpg",
+      "vendido": "false",
+      "usuario_id": "beltrano@email.com",
+      "id": 4
+    },
+    {
+      "nome": "Speaker",
+      "preco": "1299",
+      "descricao": "Som de muita qualidade!",
+      "fotos": "https://raw.githubusercontent.com/camilagerarde/Ranek/main/src/assets/speaker.jpg",
+      "vendido": "false",
+      "usuario_id": "ciclano@mail.com",
+      "id": 5
+    },
+    {
+      "nome": "Tablet",
+      "preco": "1599",
+      "descricao": "Ferramenta ótima para diversão e trabalho.",
+      "fotos": "https://raw.githubusercontent.com/camilagerarde/Ranek/main/src/assets/tablet.jpg",
+      "vendido": "false",
+      "usuario_id": "ciclano@mail.com",
+      "id": 6
+    }
+  ],
+  "transacao": [
+    {
+      "comprador_id": "beltrano@email.com",
+      "vendedor_id": "fulano@email.com",
+      "produto": {
+        "nome": "Câmera",
+        "preco": "899",
+        "descricao": "Câmera semiprofissional, pouco usada, ótimo estado!",
+        "fotos": "https://raw.githubusercontent.com/camilagerarde/Ranek/main/src/assets/camera.jpg",
+        "vendido": "false",
+        "usuario_id": "fulano@email.com",
+        "id": 2
+      },
+      "endereco": {
+        "cep": "87654321",
+        "rua": "Rua aquela",
+        "numero": "08",
+        "bairro": "Saúde",
+        "cidade": "São Paulo",
+        "estado": "SP"
+      },
+      "id": 1
+    },
+    {
+      "comprador_id": "ciclano@mail.com",
+      "vendedor_id": "beltrano@email.com",
+      "produto": {
+        "nome": "Smartphone",
+        "preco": "1199",
+        "descricao": "Smartphone excelente! Seminovo.",
+        "fotos": "https://raw.githubusercontent.com/camilagerarde/Ranek/main/src/assets/smartphone.jpg",
+        "vendido": "false",
+        "usuario_id": "beltrano@email.com",
+        "id": 3
+      },
+      "endereco": {
+        "cep": "01310-100",
+        "rua": "Avenida Paulista",
+        "numero": "50",
+        "bairro": "Bela Vista",
+        "cidade": "São Paulo",
+        "estado": "SP"
+      },
+      "id": 2
+    },
+    {
+      "comprador_id": "fulano@email.com",
+      "vendedor_id": "ciclano@mail.com",
+      "produto": {
+        "nome": "Tablet",
+        "preco": "1599",
+        "descricao": "Ferramenta ótima para diversão e trabalho.",
+        "fotos": "https://raw.githubusercontent.com/camilagerarde/Ranek/main/src/assets/tablet.jpg",
+        "vendido": "false",
+        "usuario_id": "ciclano@mail.com",
+        "id": 6
+      },
+      "endereco": {
+        "cep": "12345678",
+        "rua": "Rua Logo Ali",
+        "numero": "25",
+        "bairro": "Socorro",
+        "cidade": "São Paulo",
+        "estado": "SP"
+      },
+      "id": 3
+    }
+  ]
+}
