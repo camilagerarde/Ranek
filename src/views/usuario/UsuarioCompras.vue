@@ -10,6 +10,7 @@
         </ProdutoItem>
       </div>
     </div>
+    <PaginaCarregando v-else />
   </section>
 </template>
 
@@ -45,6 +46,7 @@ export default {
     if (this.logado) {
       this.obterCompras();
     }
+    document.title = "Usuário | Compras";
   }
 };
 </script>

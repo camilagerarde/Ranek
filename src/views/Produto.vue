@@ -41,6 +41,7 @@ export default {
     obterProduto() {
       api.get(`/produtos/${this.id}`).then(resp => {
         this.produto = resp.data;
+        document.title = this.produto.nome;
       });
     }
   },

@@ -5,6 +5,7 @@
         Salvar alterações
       </button>
     </UsuarioForm>
+    <VisualizacaoErro :erro="mensagemErro" />
   </section>
 </template>
 
@@ -14,6 +15,11 @@ import { api } from "@/services/getData.js";
 
 export default {
   name: "UsuarioEditar",
+  data() {
+    return {
+      mensagemErro: null
+    };
+  },
   components: { UsuarioForm },
   methods: {
     atualizarUsuario() {
@@ -25,10 +31,13 @@ export default {
         .then(() => {
           this.$store.dispatch("logarUsuario");
         })
-        .catch(error => {
-          console.log(error.response);
+        .catch(() => {
+          this.mensagemErro = "Ocorreu um erro na edição do usuário";
         });
     }
+  },
+  created() {
+    document.title = "Usuário | Editar";
   }
 };
 </script>

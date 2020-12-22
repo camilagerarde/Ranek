@@ -11,6 +11,7 @@
         </button>
       </UsuarioForm>
     </transition>
+    <VisualizacaoErro :erro="mensagemErro" />
   </section>
 </template>
 
@@ -21,7 +22,8 @@ export default {
   name: "CriarConta",
   data() {
     return {
-      criarConta: false
+      criarConta: false,
+      mensagemErro: null
     };
   },
   components: {
@@ -36,8 +38,8 @@ export default {
           this.$store.state.usuario.email
         );
         this.$router.push({ name: "usuario" });
-      } catch (error) {
-        console.log(error.response);
+      } catch {
+        this.mensagemErro = "Este email já possui cadastro";
       }
     }
   }

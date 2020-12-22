@@ -37,11 +37,15 @@ export default {
     formatarProduto() {
       this.produto.usuario_id = this.$store.state.usuario.id;
     },
-    adicionarProduto() {
+    async adicionarProduto(event) {
       this.formatarProduto();
-      api.post("/produtos", this.produto).then(() => {
-        this.$store.dispatch("obterProdutosUsuario");
-      });
+      const button = event.currentTarget;
+      button.value = "Adicionando...";
+      button.setAttribute("disabled", "");
+      await api.post("/produtos", this.produto);
+      await this.$store.dispatch("obterProdutosUsuario");
+      button.removeAttribute("disabled");
+      button.value = "Adicionar Produto";
     }
   }
 };

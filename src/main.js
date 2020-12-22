@@ -3,9 +3,11 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import PaginaCarregando from "@/components/PaginaCarregando.vue";
+import VisualizacaoErro from "@/components/VisualizacaoErro.vue";
 
 Vue.config.productionTip = false;
 Vue.component("PaginaCarregando", PaginaCarregando);
+Vue.component("VisualizacaoErro", VisualizacaoErro);
 
 Vue.filter("formataPreco", valor => {
   valor = Number(valor);

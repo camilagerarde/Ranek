@@ -6,6 +6,7 @@
         Finalizar Compra
       </button>
     </UsuarioForm>
+    <VisualizacaoErro :erro="mensagemErro" />
   </section>
 </template>
 
@@ -16,6 +17,11 @@ import { mapState } from "vuex";
 
 export default {
   name: "FinalizarCompra",
+  created() {
+    return {
+      mensagemErro: null
+    };
+  },
   props: ["produto"],
   components: { UsuarioForm },
   methods: {
@@ -32,8 +38,8 @@ export default {
           this.$store.state.usuario.email
         );
         await this.criarTransacao();
-      } catch (error) {
-        console.log(error.response);
+      } catch {
+        this.mensagemErro = "Ocorreu um erro na finalização da compra";
       }
     },
     finalizarCompra() {

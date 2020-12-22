@@ -13,6 +13,7 @@
         </ProdutoItem>
       </li>
     </transition-group>
+    <VisualizacaoErro :erro="mensagemErro" />
   </section>
 </template>
 
@@ -24,6 +25,11 @@ import { mapState, mapActions } from "vuex";
 
 export default {
   name: "UsuarioProdutos",
+  data() {
+    return {
+      mensagemErro: null
+    };
+  },
   components: {
     AdicionarProduto,
     ProdutoItem
@@ -41,8 +47,8 @@ export default {
           .then(() => {
             this.obterProdutosUsuario();
           })
-          .catch(error => {
-            console.log(error.response);
+          .catch(() => {
+            this.mensagemErro = "Ocorreu um erro no cadastro do produto";
           });
       }
     }
@@ -56,6 +62,7 @@ export default {
     if (this.logado) {
       this.obterProdutosUsuario();
     }
+    document.title = "Usuário";
   }
 };
 </script>

@@ -18,6 +18,7 @@
         </div>
       </div>
     </div>
+    <PaginaCarregando v-else />
   </section>
 </template>
 
@@ -53,6 +54,7 @@ export default {
     if (this.logado) {
       this.obtervendas();
     }
+    document.title = "Usuário | Vendas";
   }
 };
 </script>

@@ -7,13 +7,15 @@
         <input type="email" name="email" id="email" v-model="login.email" />
         <label for="senha">Senha</label>
         <input type="password" name="senha" id="senha" v-model="login.senha" />
-        <button class="btn" @click.prevent="verificarSenha">Logar</button>
+        <button class="btn" @click.prevent="verificarSenha(login.email)">
+          Logar
+        </button>
       </form>
       <p class="esqueceu">
         Esqueceu a senha?
-        <a @click="mostrarErro('Em construção :(')">Clique aqui.</a>
+        <a @click="mensagemErro = 'Em construção :('">Clique aqui.</a>
       </p>
-      <p class="erro">{{ mensagemErro }}</p>
+      <VisualizacaoErro :erro="mensagemErro" />
     </div>
     <CriarConta />
   </section>
@@ -28,8 +30,8 @@ export default {
   data() {
     return {
       login: {
-        email: "",
-        senha: ""
+        email: null,
+        senha: null
       },
       mensagemErro: null
     };
@@ -38,27 +40,28 @@ export default {
     CriarConta
   },
   methods: {
-    verificarSenha() {
+    verificarSenha(email) {
+      this.mensagemErro = null;
       api
-        .get(`/usuario/${this.login.email}`)
+        .get(`/usuario/${email}`)
         .then(resp => {
           if (resp.data.senha === this.login.senha) {
             this.logar();
           } else {
-            this.mostrarErro("Senha não cadastrada");
+            this.mensagemErro = "Senha incorreta";
           }
         })
         .catch(() => {
-          this.mostrarErro("Usuário não cadastrado");
+          this.mensagemErro = "Usuário não cadastrado";
         });
     },
     logar() {
       this.$store.dispatch("logarUsuario", this.login.email);
       this.$router.push({ name: "usuario" });
-    },
-    mostrarErro(mensagem) {
-      this.mensagemErro = mensagem;
     }
+  },
+  created() {
+    document.title = "Login";
   }
 };
 </script>
@@ -102,14 +105,6 @@ h1 {
 .esqueceu a:hover {
   color: #87f;
   text-decoration: underline;
-}
-
-.erro {
-  color: #e80;
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-top: 15px;
-  text-align: center;
 }
 
 @media screen and (max-width: 500px) {

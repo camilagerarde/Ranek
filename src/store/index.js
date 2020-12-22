@@ -62,9 +62,11 @@ export default new Vuex.Store({
       context.commit("UPDATE_LOGIN", false);
     },
     obterProdutosUsuario(context) {
-      api.get(`/produtos?usuario_id=${context.state.usuario.id}`).then(resp => {
-        context.commit("UPDATE_PRODUTOS_USUARIO", resp.data);
-      });
+      return api
+        .get(`/produtos?usuario_id=${context.state.usuario.id}`)
+        .then(resp => {
+          context.commit("UPDATE_PRODUTOS_USUARIO", resp.data);
+        });
     }
   },
   modules: {}
