@@ -159,6 +159,50 @@
         "estado": "SP"
       },
       "id": 3
+    },
+    {
+      "comprador_id": "fulano@email.com",
+      "vendedor_id": "ciclano@mail.com",
+      "produto": {
+        "nome": "Speaker",
+        "preco": "1299",
+        "descricao": "Som de muita qualidade!",
+        "fotos": "https://raw.githubusercontent.com/camilagerarde/Ranek/main/src/assets/speaker.jpg",
+        "vendido": "false",
+        "usuario_id": "ciclano@mail.com",
+        "id": 5
+      },
+      "endereco": {
+        "cep": "12345678",
+        "rua": "Rua Logo Ali",
+        "numero": "25",
+        "bairro": "Socorro",
+        "cidade": "São Paulo",
+        "estado": "SP"
+      },
+      "id": 4
+    },
+    {
+      "comprador_id": "fulano@email.com",
+      "vendedor_id": "ciclano@mail.com",
+      "produto": {
+        "nome": "Tablet",
+        "preco": "1599",
+        "descricao": "Ferramenta ótima para diversão e trabalho.",
+        "fotos": "https://raw.githubusercontent.com/camilagerarde/Ranek/main/src/assets/tablet.jpg",
+        "vendido": "false",
+        "usuario_id": "ciclano@mail.com",
+        "id": 6
+      },
+      "endereco": {
+        "cep": "12345678",
+        "rua": "Rua Logo Ali",
+        "numero": "25",
+        "bairro": "Socorro",
+        "cidade": "São Paulo",
+        "estado": "SP"
+      },
+      "id": 5
     }
   ]
 }
