@@ -7,15 +7,15 @@ Se trata de um e-commerce de eletrônicos, utilizando Vue.js e Javascript (Vuex,
 ```
 npm install
 ```
-## API - Na linha de comando, acesse o diretório da API (ranek-api) e utilize o comando.
+#### API - Na linha de comando, acesse o diretório da API (ranek-api) e utilize o comando.
 ```
 json-server --watch ranek.json
 ```
-### Compilar
+#### Compilar
 ```
 npm run serve
 ```
-### Visualizar
+#### Visualizar
 ```
 http://localhost:8080/
 ```
